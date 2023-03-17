@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CharacteMove : MonoBehaviour
 {
-
     //キャラクターの移動
     public float idouzahyou;
     //キャラクターの座標取得用
