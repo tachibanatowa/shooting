@@ -19,7 +19,7 @@ public class CharacteMove : MonoBehaviour
     
     public void MoveA(float posx)
     {
-        if (posx >= -5 )
+        if (posx >= -5)
         {
             position = posx - idouzahyou;
         }

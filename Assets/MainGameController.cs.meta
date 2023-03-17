@@ -3,7 +3,10 @@ guid: 141b9c2d297d99a4499a810010afd4ce
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Charmove: {instanceID: 0}
+  - Gunmove: {instanceID: 0}
+  - BulletObj: {fileID: 6406876444115152013, guid: 54e902b320730734ab3ca83a2f561954, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
