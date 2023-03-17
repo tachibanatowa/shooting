@@ -1,35 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class CharacteMove
+public class CharacteMove : MonoBehaviour
 {
-    //キャラクターの移動速度
-    public float speed;
+
+    //キャラクターの移動
+    public float idouzahyou;
     //キャラクターの座標取得用
-    public float posx;
+    public float position;
 
     // Start is called before the first frame update
     public void Start()
     {
-        speed = 0.05f;
-        posx = 0.0f;
+        idouzahyou = 0.05f;
     }
 
     // Update is called once per frame
     
     public void MoveA(float posx)
     {
-        posx += speed;
+        if (posx >= -5 )
+        {
+            position = posx - idouzahyou;
+        }
     }
 
     public void MoveD(float posx)
     {
-        posx -= speed;
+        if (posx <= 5)
+        {
+            position = posx + idouzahyou;
+        }
     }
 
     public float MoveReturn()
     {
-        return posx;
+        return position;
     }
 
     public void Update()
