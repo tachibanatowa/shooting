@@ -31,5 +31,6 @@ public class BulletController : MonoBehaviour
     {
         Destroy(col.gameObject);
         Destroy(this.gameObject);
+        GameObject.Find("Canvas").GetComponent<ScoreController>().AddScore();
     }
 }
