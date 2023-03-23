@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
 {
     // 弾の発射スピード
     public float Speed;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,4 @@ public class BulletController : MonoBehaviour
         }
     }
 
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Destroy(col.gameObject);
-        Destroy(this.gameObject);
-        GameObject.Find("Canvas").GetComponent<ScoreController>().AddScore();
-    }
 }

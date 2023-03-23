@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreController : MonoBehaviour
+public class ScoreText: MonoBehaviour
 {
     int score = 0;
     Text textComponent;
@@ -11,7 +11,9 @@ public class ScoreController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.textComponent = GameObject.Find("Text").GetComponent<Text>();
+        //アタッチしているオブジェクトからTextを探し、コンポーネントを取得する
+        this.textComponent = GameObject.Find("ScoreText").GetComponent<Text>();
+        //Score numを表示させる
         this.textComponent.text = "Score " + score.ToString();
     }
 
@@ -21,9 +23,14 @@ public class ScoreController : MonoBehaviour
 
     }
 
+    //BulletControllerより弾駕的に当たるとよばれる
     public void AddScore()
     {
+        //scoreに1体倒すたびに＋10
         this.score += 10;
+        //Score numを表示させる
         this.textComponent.text = "Score " + score.ToString();
+        PlayerPrefs.SetInt("SCORE", this.score);
+        PlayerPrefs.Save();
     }
 }
