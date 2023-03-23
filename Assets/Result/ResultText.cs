@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class ResultText : MonoBehaviour
 {
+    //private Count Count;
     Text textComponent;
+    int count;
+
     // Start is called before the first frame update
     void Start()
     {
-        int resultScore = PlayerPrefs.GetInt("SCORE");
         //アタッチしているオブジェクトからTextを探し、コンポーネントを取得する
-        this.textComponent = GameObject.Find("Text").GetComponent<Text>();
-        //Score numを表示させる
-        this.textComponent.text = "Score " + resultScore.ToString();
+        var Count = FindObjectOfType<Count>();
+        //int count = 0;
+        count = Count.scoreresult();
+
+        this.GetComponent<Text>().text = "クリック回数は" + count.ToString() + "でした";
     }
 
     // Update is called once per frame

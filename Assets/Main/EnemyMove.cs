@@ -30,6 +30,8 @@ public class EnemyMove : MonoBehaviour
     {
         Destroy(col.gameObject);
         Destroy(this.gameObject);
+        GameObject.Find("ScoreController(Clone)").GetComponent<Count>().Score2();
         GameObject.Find("Canvas").GetComponent<ScoreText>().AddScore();
+        
     }
 }
